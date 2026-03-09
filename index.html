@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Swiss Food Brochure</title>
+
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background: #ebd4d4;;
+    text-align:center;
+}
+
+h1{
+    color:#d60000;
+}
+
+h3{
+    color: white;
+}
+
+p{
+    color:rgb(255, 255, 255);
+}
+
+.container{
+    width:900px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    perspective:1000px;
+}
+
+.card-inner{
+    position:relative;
+    width:100%;
+    height:260px;
+    transition:transform 0.7s;
+    transform-style:preserve-3d;
+}
+
+.card.flip .card-inner{
+    transform:rotateY(180deg);
+}
+
+.card-front, .card-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    background: #d52b1e;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+    padding:10px;
+}
+
+.card-front img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.card-back{
+    transform:rotateY(180deg);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+button{
+    margin-top:10px;
+    padding:6px 12px;
+    border:none;
+    background:#;
+    color:rgb(255, 0, 0);
+    cursor:pointer;
+    border-radius:5px;
+}
+
+button:hover{
+    background:#e4bfbf;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Swiss Gastronomy</h1>
+<h2>Sara Manuela Benitez Rivas</h2>
+
+<div class="container">
+
+<!-- CARD 1 -->
+<div class="card">
+<div class="card-inner">
+
+<div class="card-front">
+<img src="images/Fondue.jpeg">
+<h3>Fondue</h3>
+<button onclick="flip(this)">See</button>
+</div>
+
+<div class="card-back">
+<p>Fondue is melted cheese.</p>
+<p>People eat it with bread.</p>
+<p>Friends share the pot.</p>
+<button onclick="flip(this)">Close</button>
+</div>
+
+</div>
+</div>
+
+<!-- CARD 2 -->
+<div class="card">
+<div class="card-inner">
+
+<div class="card-front">
+<img src="/images/Raclette.jpeg">
+<h3>Raclette</h3>
+<button onclick="flip(this)">See</button>
+</div>
+
+<div class="card-back">
+<p>Raclette is hot cheese.</p>
+<p>It goes on potatoes.</p>
+<p>It is a traditional meal.</p>
+<button onclick="flip(this)">Close</button>
+</div>
+
+</div>
+</div>
+
+<!-- CARD 3 -->
+<div class="card">
+<div class="card-inner">
+
+<div class="card-front">
+<img src="/images/Rosti.jpeg">
+<h3>Rösti</h3>
+<button onclick="flip(this)">See</button>
+</div>
+
+<div class="card-back">
+<p>Rösti is made with potatoes.</p>
+<p>Potatoes are fried.</p>
+<p>It is crispy and tasty.</p>
+<button onclick="flip(this)">Close</button>
+</div>
+
+</div>
+</div>
+
+<!-- CARD 4 -->
+<div class="card">
+<div class="card-inner">
+
+<div class="card-front">
+<img src="/images/SwissChocolate.jpeg">
+<h3>Swiss Chocolate</h3>
+<button onclick="flip(this)">See</button>
+</div>
+
+<div class="card-back">
+<p>Swiss chocolate is famous.</p>
+<p>It is sweet and smooth.</p>
+<p>Many tourists buy it.</p>
+<button onclick="flip(this)">Close</button>
+</div>
+
+</div>
+</div>
+
+<!-- CARD 5 -->
+<div class="card">
+<div class="card-inner">
+
+<div class="card-front">
+<img src="/images/SwissCheese.jpeg">
+<h3>Swiss Cheese</h3>
+<button onclick="flip(this)">See</button>
+</div>
+
+<div class="card-back">
+<p>Swiss cheese is very popular.</p>
+<p>It has big holes.</p>
+<p>People eat it with bread.</p>
+<button onclick="flip(this)">Close</button>
+</div>
+
+</div>
+</div>
+
+<!-- CARD 6 -->
+<div class="card">
+<div class="card-inner">
+
+<div class="card-front">
+<img src="/images/Zurcher.jpeg">
+<h3>Zürcher</h3>
+<button onclick="flip(this)">See</button>
+</div>
+
+<div class="card-back">
+<p>This dish has meat and cream.</p>
+<p>It comes from Zurich.</p>
+<p>People eat it with rösti.</p>
+<button onclick="flip(this)">Close</button>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div></div>
+<footer>
+    Copyright 2025
+</footer>
+
+
+function flip(button){
+    let card = button.closest(".card");
+    card.classList.toggle("flip");
+}
+
+</script>
+
+</body>
+</html>
